@@ -37,10 +37,8 @@ services:
       - key: DASHBOARD_URL
         sync: false
 
-  - type: web
+  - type: static
     name: ember-dashboard
-    runtime: static
-    plan: free
     rootDir: dashboard
     buildCommand: ""
     staticPublishPath: .
