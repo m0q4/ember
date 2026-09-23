@@ -1,0 +1,9 @@
+{
+  "name": "ember-dashboard",
+  "version": "1.0.0",
+  "description": "Ember Anticheat - Dashboard web (HTML/CSS/JS vanilla)",
+  "private": true,
+  "scripts": {
+    "serve": "npx --yes serve -l 5173 ."
+  }
+}

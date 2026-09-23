@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<title>Ember Anticheat</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="hidden">
+    <div class="ember-panel">
+      <header class="ember-header">
+        <div class="ember-brand">
+          <span class="ember-dot"></span>
+          <span class="ember-title">Ember</span>
+          <span class="ember-subtitle">Anticheat</span>
+        </div>
+        <div class="ember-actions">
+          <button id="refreshBtn" class="btn btn-ghost" title="Aggiorna lista">&#8635;</button>
+          <button id="closeBtn" class="btn btn-ghost" title="Chiudi">&times;</button>
+        </div>
+      </header>
+
+      <div id="toast" class="toast hidden"></div>
+
+      <main class="ember-body">
+        <div class="list-head">
+          <span>Player</span>
+          <span>Identifier</span>
+          <span></span>
+        </div>
+        <ul id="playerList" class="player-list"></ul>
+        <p id="emptyState" class="empty-state hidden">Nessun player online.</p>
+      </main>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-box">
+      <h2>Conferma Ban</h2>
+      <p id="confirmPlayerName" class="modal-player"></p>
+      <label for="banReason">Motivo del ban</label>
+      <textarea id="banReason" placeholder="Es. Aimbot rilevato, cheat engine..."></textarea>
+      <div class="modal-actions">
+        <button id="cancelBanBtn" class="btn btn-ghost">Annulla</button>
+        <button id="confirmBanBtn" class="btn btn-danger">Conferma Ban</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

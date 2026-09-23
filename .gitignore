@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+dashboard/.DS_Store
+discord-bot/data/tickets.json
+.firebase/

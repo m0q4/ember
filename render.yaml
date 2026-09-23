@@ -1,0 +1,46 @@
+# Render Blueprint — hosting gratuito di Ember (backend + dashboard).
+# Uso: su render.com -> New -> Blueprint -> collega questo repo -> Apply.
+# Il database Postgres NON e' incluso qui (Render non offre piu' un piano free
+# persistente): usa Neon.tech (gratuito, senza scadenza) e incolla la connection
+# string in DATABASE_URL quando richiesto, vedi README.md.
+
+services:
+  - type: web
+    name: ember-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 12h
+      - key: DISCORD_CLIENT_ID
+        sync: false
+      - key: DISCORD_CLIENT_SECRET
+        sync: false
+      - key: DISCORD_REDIRECT_URI
+        sync: false
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: DISCORD_GUILD_ID
+        sync: false
+      - key: DISCORD_ADMIN_ROLE_ID
+        sync: false
+      - key: DASHBOARD_URL
+        sync: false
+
+  - type: web
+    name: ember-dashboard
+    runtime: static
+    plan: free
+    rootDir: dashboard
+    buildCommand: ""
+    staticPublishPath: .
